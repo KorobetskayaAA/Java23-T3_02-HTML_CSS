@@ -1,0 +1,287 @@
+/* Общие настройки для всех тегов:
+    - шрифт по умолчанию без засечек
+    - отступы внутри и снаружи отсутствуют
+    - ширина и высота элемента включает его рамку
+    - для демонстрации рамки вокруг всех блоков
+*/
+
+* {
+  font-family: sans-serif;
+  box-sizing: border-box;
+  /*border: 10px solid red;*/
+}
+
+/* ТЕЛО СТРАНИЦЫ
+   Растягивается по высоте, если страница меньше экрана
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1280px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    width: 960px;
+  }
+}
+
+@media (max-width: 960px) {
+  .container {
+    width: 100%;
+  }
+}
+
+/* ЦВЕТОВАЯ СХЕМА
+   Осенняя гамма
+   - небесная шапка
+   - золотое меню
+   - оранжевые/персиковые заголовки и ссылки
+   - темно-синий подвал
+*/
+
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+header {
+  background-color: #067adf;
+  color: #ffe;
+}
+
+nav {
+  background-color: #ffcc2e;
+}
+
+nav a {
+  color: #892208;
+}
+
+nav a:hover {
+  background-color: #ffdd73;
+}
+
+nav .selected {
+  background-color: #ffd968;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  background-color: #ff9473;
+  color: #a62800;
+}
+
+a {
+  color: #a62800;
+}
+
+footer {
+  background-color: #073459;
+  color: #6dace0;
+}
+
+table {
+  border: 1px solid #a62800;
+}
+
+thead th {
+  color: #a62800;
+  border-bottom: 1px dashed #a62800;
+}
+
+tfoot th {
+  border-top: 1px dashed #a62800;
+}
+
+tr:hover td {
+  background-color: #ff9473;
+}
+
+/* ШАПКА САЙТА
+   Логотип + название
+*/
+
+header .container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+h1 {
+  font-weight: 800;
+  width: 100%;
+  text-align: center;
+}
+
+.logo {
+  height: 100px;
+  margin: 8px 22px;
+  filter: drop-shadow(0px 0px 1px #0a0030);
+}
+
+@media (max-width: 1280px) {
+  .logo {
+    height: 50px;
+    margin: 4px 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    display: none;
+  }
+}
+
+/* МЕНЮ
+   Ссылки-кнопки
+*/
+
+nav {
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  display: inline-block;
+  margin: 6px 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline-block;
+  min-width: 120px;
+}
+
+nav a {
+  display: block;
+  padding: 8px 6px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  font-weight: bold;
+}
+
+/* ОСНОВНАЯ ЧАСТЬ */
+
+main {
+  margin: 1em 12px;
+}
+
+main .container {
+  display: flex;
+}
+
+@media (max-width: 480px) {
+  main .container {
+    flex-flow: column;
+  }
+}
+
+section,
+article {
+  width: 100%;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Перед заголовками оставлять одну пустую строку */
+  margin: 1em 0 0.5em;
+  padding: 2px 5pt;
+}
+
+/* БОКОВИК */
+
+aside {
+  margin: 12px 0 0 12px;
+}
+
+@media (min-width: 480px) {
+  aside {
+    width: auto;
+    max-width: 25%;
+  }
+  aside.quote {
+    max-width: 100%;
+    width: 240px;
+    min-height: 10em;
+  }
+}
+
+.quote {
+  border: 1px solid grey;
+  padding: 6px;
+  font-size: 90%;
+  color: darkslategray;
+  text-align: justify;
+}
+
+.quote-author {
+  font-style: italic;
+  text-align: end;
+}
+
+/* ПОДВАЛ */
+
+footer {
+  min-height: 36px;
+  text-align: center;
+  font-size: smaller;
+  padding: 6px;
+}
+
+/* ТАБЛИЦЫ */
+
+table {
+  width: 100%;
+}
+
+caption {
+  font-weight: bolder;
+}
+
+th {
+  padding: 12px 17px;
+}
+
+td {
+  padding: 4px 12px;
+}
+
+tfoot {
+  text-align: left;
+  font-weight: bold;
+}
+
+/* ВЫРАВНИВАНИЕ */
+
+.lft {
+  text-align: left;
+}
+
+.ctr {
+  text-align: center;
+}
+
+.rgt {
+  text-align: right;
+}
